@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="MarkerNahual" size="500.000000 500.000000" />
+    <ImageTarget name="MixeMarker" size="500.000000 500.000000" />
+    <ImageTarget name="MarcadorIndeAppp" size="500.000000 500.000000" />
+    <ImageTarget name="MarkDos" size="500.000000 500.000000" />
+    <ImageTarget name="MarkUno" size="500.000000 500.000000" />
+    <ImageTarget name="markBye" size="500.000000 500.000000" />
+    <ImageTarget name="markHola" size="500.000000 500.000000" />
+    <ImageTarget name="Mark5" size="500.000000 500.000000" />
+    <ImageTarget name="mark4" size="500.000000 500.000000" />
+    <ImageTarget name="mark3" size="500.000000 500.000000" />
+    <ImageTarget name="marker1" size="500.000000 500.000000" />
+    <ImageTarget name="marcador" size="500.000000 500.000000" />
+  </Tracking>
+</QCARConfig>

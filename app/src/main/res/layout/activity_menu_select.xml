@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    tools:context=".Menu_select"
+    tools:layout_editor_absoluteY="25dp">
+
+    <Button
+        android:id="@+id/ButDic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btnround"
+        android:text="Diccionario"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/ButRA"
+        app:layout_constraintEnd_toStartOf="@+id/ButTrad"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.915" />
+
+    <Button
+        android:id="@+id/ButRA"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="208dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/realidadbut"
+        android:text="R.A."
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="194dp"
+        android:layout_height="162dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButRA"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/nuevo_lienzo_sf" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="424dp"
+        android:layout_height="109dp"
+        android:layout_marginBottom="288dp"
+        android:adjustViewBounds="false"
+        android:background="#E2F1EE"
+        app:layout_constraintBottom_toTopOf="@+id/ButRA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/indeapp" />
+
+    <Button
+        android:id="@+id/ButTrad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btnround"
+        android:text="Traductor"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/ButRA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.915" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="420dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="244dp"
+        android:background="#E2F1EE"
+        android:gravity="center"
+        android:text="¡Selecciona una opción!"
+        android:textAlignment="center"
+        android:textColor="#2d2d2d"
+        android:textSize="@dimen/_27sdp"
+        app:layout_constraintBottom_toTopOf="@+id/ButRA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</android.support.constraint.ConstraintLayout>

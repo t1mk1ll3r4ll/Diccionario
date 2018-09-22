@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    tools:context=".Traductor"
+    tools:layout_editor_absoluteY="25dp">
+
+
+    <TextView
+        android:id="@+id/idno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Texto a traducir"
+        android:textAlignment="center"
+        android:textColor="#2D2D2D"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintEnd_toStartOf="@+id/TVTrad"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="262dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="58dp"
+        android:ems="10"
+        android:hint="palabra"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="#2D2D2D"
+        app:layout_constraintBottom_toTopOf="@+id/videoView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TVTrad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Texto Traducido"
+        android:textAlignment="center"
+        android:textColor="#2d2d2d"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toTopOf="@+id/texttrad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/texttrad"
+        android:layout_width="104dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="268dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:textColor="#2D2D2D"
+        android:textSize="@dimen/_24sdp"
+        app:layout_constraintBottom_toTopOf="@+id/videoView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.796"
+        app:layout_constraintStart_toEndOf="@+id/editText3" />
+
+    <Button
+        android:id="@+id/buttontrad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/btnround"
+        android:text="Traducir"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <VideoView
+        android:id="@+id/videoView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginStart="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginStart="4dp"
+        android:text="Pronunciación"
+        android:textColor="#2d2d2d"
+        android:textSize="@dimen/_24sdp"
+        app:layout_constraintBottom_toTopOf="@+id/videoView3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
