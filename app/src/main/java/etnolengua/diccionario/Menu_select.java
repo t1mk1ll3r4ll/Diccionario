@@ -38,7 +38,7 @@ public class Menu_select extends AppCompatActivity {
         btnDic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(Menu_select.this,MainActivity.class);
+                Intent intent2 = new Intent(Menu_select.this,SeleccionDiccionario.class);
                 startActivity(intent2);
             }
         });

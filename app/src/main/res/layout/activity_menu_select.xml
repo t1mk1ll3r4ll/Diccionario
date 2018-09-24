@@ -22,7 +22,7 @@
         android:text="Diccionario"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/ButRA"
-        app:layout_constraintEnd_toStartOf="@+id/ButTrad"
+        app:layout_constraintEnd_toStartOf="@+id/ButB"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
@@ -64,7 +64,7 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="424dp"
+        android:layout_width="0dp"
         android:layout_height="109dp"
         android:layout_marginBottom="288dp"
         android:adjustViewBounds="false"

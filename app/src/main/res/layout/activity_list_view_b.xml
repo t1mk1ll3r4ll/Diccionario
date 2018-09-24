@@ -5,25 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#efefef"
-    tools:context="etnolengua.diccionario.MainActivity"
+    tools:context="etnolengua.diccionario.ListViewB"
     tools:layout_editor_absoluteY="81dp">
 
-    <!--<EditText
-        android:id="@+id/editTextBusqueda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="Busqueda"
-        android:inputType="text"
-        android:singleLine="true"
-        android:textColor="#2d2d2d"
-        android:background="#efefef"
-        android:textColorHint="#2d2d2d"
-        android:textSize="@dimen/_13sdp"
-        app:layout_constraintBottom_toTopOf="@+id/listview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
         android:id="@+id/textView6"
@@ -34,16 +18,16 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:text='"A"'
+        android:text='"B"'
         android:textColor="#2D2D2D"
         android:textSize="@dimen/_25sdp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/listview"
+        app:layout_constraintBottom_toTopOf="@+id/listviewB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.41"
-        tools:text='"A"' />
+        tools:text='"B"' />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -55,7 +39,7 @@
         app:srcCompat="@drawable/indeapp" />
 
     <ListView
-        android:id="@+id/listview"
+        android:id="@+id/listviewB"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="64dp"
