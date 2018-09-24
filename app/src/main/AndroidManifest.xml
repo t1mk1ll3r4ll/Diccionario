@@ -58,6 +58,7 @@
         <activity
             android:name=".SeleccionDiccionario"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".ListViewC"></activity>
     </application>
 
 </manifest>
