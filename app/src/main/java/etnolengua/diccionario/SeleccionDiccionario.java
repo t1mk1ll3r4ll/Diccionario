@@ -22,11 +22,11 @@ public class SeleccionDiccionario extends AppCompatActivity {
         startActivity(intentb);
     }
     public void c(View view){
-        Intent intentc=new Intent (SeleccionDiccionario.this, ListViewB.class);
+        Intent intentc=new Intent (SeleccionDiccionario.this, ListViewC.class);
         startActivity(intentc);
     }
     public void d(View view){
-        Intent intentd=new Intent (SeleccionDiccionario.this, ListViewB.class);
+        Intent intentd=new Intent (SeleccionDiccionario.this, ListViewD.class);
         startActivity(intentd);
     }
     public void e(View view){
