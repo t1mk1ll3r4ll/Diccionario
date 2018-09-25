@@ -90,9 +90,24 @@ public class Traductor extends AppCompatActivity {
     public void recorre(){
         boolean band =false;
         String tring = ETtrad.getText().toString().toLowerCase();
+        if(tring.equals("1")||tring.equals("2")){
+            if(tring.equals("1")){
+                tring="uno";
+            }
+            else if(tring.equals("2")){
+                tring="dos";
+            }
+            for (int i = 0; i < esp.length; i++) {
+                if (tring.equals(esp[i])) {
+                    index = i;
+                    band = true;
+                    break;
+                }
+            }
         if(tring.equals("")) {
             Toast.makeText(getApplicationContext(), "por favor, ingrese una palabra", Toast.LENGTH_LONG).show();
             band = true;
+            }
         }else if(!band){
             for (int i = 0; i < esp.length; i++) {
                 if (tring.equals(esp[i])) {
@@ -115,17 +130,15 @@ public class Traductor extends AppCompatActivity {
         band1= true;
         String fileplace="android.resource://" + getPackageName() + "/raw/";
         String A = ETtrad.getText().toString().toLowerCase();
-        if(A.equals("")) {
-            band1=false;
 
-        }else if (A.equals("uno")) {
+        if (A.equals("uno")||A.equals("1")) {
             String filename="uno";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
 
             Vid.start();
             band1=false;
-        }else if(A.equals("dos")) {
+        }else if(A.equals("dos")||A.equals("2")) {
             String filename="dos";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
