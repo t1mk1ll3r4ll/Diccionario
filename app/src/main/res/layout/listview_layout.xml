@@ -19,22 +19,32 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+
             android:layout_alignParentTop="true"
             android:layout_marginStart="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginLeft="18dp"
             android:text="TextView"
             android:textColor="#2D2D2D"
-            android:textSize="@dimen/_15sdp" />
+            android:textSize="@dimen/_15sdp"
+            android:fontFamily="sans-serif-thin"/>
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+
             android:layout_alignParentTop="true"
             android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+
             android:text="TextView"
             android:textColor="#2D2D2D"
-            android:textSize="@dimen/_15sdp" />
+            android:textSize="@dimen/_15sdp"
+            android:fontFamily="sans-serif-thin"/>
     </RelativeLayout>
 
 </LinearLayout>

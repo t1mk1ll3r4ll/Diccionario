@@ -38,6 +38,7 @@
         android:textColor="#2D2D2D"
         android:textSize="@dimen/_25sdp"
         android:textStyle="bold"
+        android:fontFamily="sans-serif-thin"
         app:layout_constraintBottom_toTopOf="@+id/listview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

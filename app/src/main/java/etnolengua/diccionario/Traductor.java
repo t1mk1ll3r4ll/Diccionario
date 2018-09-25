@@ -5,7 +5,9 @@ import android.media.AudioManager;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,13 +47,42 @@ public class Traductor extends AppCompatActivity {
                 }else if(puchado==1) {
                     Toast.makeText(getApplicationContext(),"Recuerda subir el volumen para escuchar la pronunciacion",Toast.LENGTH_LONG).show();
                     puchado++;
-                    }
-
-
-                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(ETtrad.getWindowToken(), 0);
+                    }try{
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(ETtrad.getWindowToken(), 0);
+                }
+                catch (NullPointerException exception) {
+                    Toast toast = Toast.makeText(getApplicationContext(),"se ha producido un error,\n lo sentimos :(",Toast                     .LENGTH_LONG);
+                }
                 recorre();
                 Video();
+            }
+        });
+        ETtrad.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
+                    //do what you want on the press of 'done'
+                    if (puchado==0) {
+                        AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                        audio.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                                AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
+                        puchado++;
+                    }else if(puchado==1) {
+                        Toast.makeText(getApplicationContext(),"Recuerda subir el volumen para escuchar la pronunciacion",Toast.LENGTH_LONG).show();
+                        puchado++;
+                    }try{
+                        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(ETtrad.getWindowToken(), 0);
+                    }
+                    catch (NullPointerException exception) {
+                        Toast toast = Toast.makeText(getApplicationContext(),"se ha producido un error,\n lo sentimos :(",Toast                     .LENGTH_LONG);
+                    }
+                    recorre();
+                    Video();
+
+
+                }
+                return false;
             }
         });
      }
@@ -66,16 +97,17 @@ public class Traductor extends AppCompatActivity {
                 break;
             }
         }
-            if(band==false) {
+            if(!band) {
                 Toast toast = Toast.makeText(getApplicationContext(),"La palabra '"+tring+"' no se encuentra",Toast.LENGTH_LONG);
                 toast.show();
             }
-            else if(band==true){
+            else if(band){
                 texttrad.setText(mixe[index]);
             }
     }
     public void Video(){
-        boolean band = true;
+        boolean band ;
+        band= true;
         String fileplace="android.resource://" + getPackageName() + "/raw/";
         String A = ETtrad.getText().toString().toLowerCase();
         if (A.equals("uno")  || A.equals("UNO")) {
@@ -94,7 +126,7 @@ public class Traductor extends AppCompatActivity {
             band=false;
         }
         else{
-            if(band==true) {
+            if(band) {
                 Toast toast = Toast.makeText(getApplicationContext(), "la pronunciación de '" + A + "' aun no se encuentra disponible", Toast.LENGTH_LONG);
                 toast.show();
             }

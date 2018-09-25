@@ -17,6 +17,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:text='"D"'
+        android:fontFamily="sans-serif-thin"
         android:textColor="#2D2D2D"
         android:textSize="@dimen/_25sdp"
         android:textStyle="bold"
