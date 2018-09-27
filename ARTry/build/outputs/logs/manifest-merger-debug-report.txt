@@ -1,12 +1,12 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:1-37:12
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:1-38:12
 	package
 		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:2:70-97
 		INJECTED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml
@@ -72,19 +72,19 @@ ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\Andro
 	android:name
 		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:9:20-76
 application
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:10:3-30:17
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:10:3-31:17
 	android:label
 		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:10:16-48
 	android:icon
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:10:169-200
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:10:110-141
 	android:banner
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:10:131-168
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:10:72-109
 	android:theme
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:10:49-107
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:10:142-195
 	android:isGame
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:10:108-130
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:10:49-71
 activity#com.unity3d.player.UnityPlayerNativeActivity
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:11:5-14:16
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:11:5-15:16
 	android:screenOrientation
 		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:11:108-145
 	android:label
@@ -98,88 +98,88 @@ ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\Andro
 	android:name
 		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:11:15-74
 meta-data#unityplayer.UnityActivity
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:12:7-82
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:13:7-82
 	android:value
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:12:59-79
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:13:59-79
 	android:name
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:12:18-58
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:13:18-58
 meta-data#unityplayer.ForwardNativeEventsToDalvik
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:13:7-97
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:14:7-97
 	android:value
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:13:73-94
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:14:73-94
 	android:name
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:13:18-72
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:14:18-72
 activity#com.unity3d.player.VideoPlayer
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:15:5-16:16
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:16:5-17:16
 	android:screenOrientation
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:15:94-130
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:16:94-130
 	android:label
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:15:61-93
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:16:61-93
 	android:configChanges
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:15:131-288
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:16:131-288
 	android:name
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:15:15-60
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:16:15-60
 uses-library#com.ti.s3d
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:22:5-72
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:23:5-72
 	android:required
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:22:45-69
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:23:45-69
 	android:name
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:22:19-44
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:23:19-44
 uses-library#com.osterhoutgroup.api.ext
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:26:5-88
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:27:5-88
 	android:required
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:26:61-85
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:27:61-85
 	android:name
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:26:19-60
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:27:19-60
 meta-data#unity.build-id
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:27:5-101
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:28:5-101
 	android:value
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:27:46-98
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:28:46-98
 	android:name
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:27:16-45
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:28:16-45
 meta-data#unity.splash-mode
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:28:5-69
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:29:5-69
 	android:value
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:28:49-66
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:29:49-66
 	android:name
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:28:16-48
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:29:16-48
 meta-data#unity.splash-enable
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:29:5-75
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:30:5-75
 	android:value
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:29:51-72
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:30:51-72
 	android:name
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:29:16-50
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:30:16-50
 uses-feature#0x00020000
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:31:3-52
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:32:3-52
 	android:glEsVersion
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:31:17-49
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:32:17-49
 uses-feature#android.hardware.camera.autofocus
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:32:3-93
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:33:3-93
 	android:required
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:32:66-90
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:33:66-90
 	android:name
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:32:17-65
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:33:17-65
 uses-feature#android.hardware.camera.front
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:33:3-89
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:34:3-89
 	android:required
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:33:62-86
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:34:62-86
 	android:name
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:33:17-61
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:34:17-61
 uses-feature#android.hardware.touchscreen
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:34:3-88
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:35:3-88
 	android:required
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:34:61-85
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:35:61-85
 	android:name
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:34:17-60
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:35:17-60
 uses-feature#android.hardware.touchscreen.multitouch
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:35:3-99
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:36:3-99
 	android:required
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:35:72-96
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:36:72-96
 	android:name
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:35:17-71
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:36:17-71
 uses-feature#android.hardware.touchscreen.multitouch.distinct
-ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:36:3-108
+ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:37:3-108
 	android:required
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:36:81-105
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:37:81-105
 	android:name
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:36:17-80
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTry\src\main\AndroidManifest.xml:37:17-80

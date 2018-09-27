@@ -7,8 +7,9 @@
   <uses-permission android:name="android.permission.CAMERA" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-  <application android:label="@string/app_name" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:isGame="false" android:banner="@drawable/app_banner" android:icon="@mipmap/app_icon">
+  <application android:label="@string/app_name" android:isGame="false" android:banner="@drawable/app_banner" android:icon="@mipmap/app_icon" android:theme="@style/UnityThemeSelector.Translucent">
     <activity android:name="com.unity3d.player.UnityPlayerNativeActivity" android:label="@string/app_name" android:screenOrientation="landscape" android:launchMode="singleTask" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density" android:hardwareAccelerated="false">
+
       <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
       <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" />
     </activity>
@@ -24,7 +25,7 @@
             To support the ODG R7 in stereo mode we must add the following library.
         -->
     <uses-library android:name="com.osterhoutgroup.api.ext" android:required="false" />
-    <meta-data android:name="unity.build-id" android:value="76397490-2d48-49d0-9e10-8ecef3e429df" />
+    <meta-data android:name="unity.build-id" android:value="74977f95-67ed-4e64-855b-d2485a7b112e" />
     <meta-data android:name="unity.splash-mode" android:value="0" />
     <meta-data android:name="unity.splash-enable" android:value="False" />
   </application>
