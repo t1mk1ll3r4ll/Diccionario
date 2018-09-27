@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-
 public class UnityPlayerActivity extends Activity
 {
     protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
@@ -113,10 +112,9 @@ public class UnityPlayerActivity extends Activity
     // Pass any events not handled by (unfocused) views straight to UnityPlayer
     @Override public boolean onKeyUp(int keyCode, KeyEvent event)     { return mUnityPlayer.injectEvent(event); }
     @Override public boolean onKeyDown(int keyCode, KeyEvent event)   {
-        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
-            onBackPressed();
-        }return mUnityPlayer.injectEvent(event);
-
+            if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+                onBackPressed();
+            }return mUnityPlayer.injectEvent(event);
     }
     @Override public boolean onTouchEvent(MotionEvent event)          { return mUnityPlayer.injectEvent(event); }
     /*API12*/ public boolean onGenericMotionEvent(MotionEvent event)  { return mUnityPlayer.injectEvent(event); }
