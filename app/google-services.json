@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "632592719942",
+    "firebase_url": "https://indeapp-19439.firebaseio.com",
+    "project_id": "indeapp-19439",
+    "storage_bucket": "indeapp-19439.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632592719942:android:6b75d00aed95f49e",
+        "android_client_info": {
+          "package_name": "etnolengua.diccionario"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632592719942-i2qdcjddqlc8u82kk8fk40i2p6hvl3ik.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "etnolengua.diccionario",
+            "certificate_hash": "c7e451765392acc06e93a5e8574d723a704c21c0"
+          }
+        },
+        {
+          "client_id": "632592719942-a0cmbevprdlbeud0b5jc8ti953t0sa2g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrgxN_UunbXnk1gQkEhgdBU_LyF2kD4tI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632592719942-a0cmbevprdlbeud0b5jc8ti953t0sa2g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

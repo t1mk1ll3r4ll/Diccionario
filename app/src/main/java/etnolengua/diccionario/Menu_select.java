@@ -13,7 +13,7 @@ import com.HeadApp.ARTry.UnityPlayerActivity;
 
 public class Menu_select extends AppCompatActivity {
 
-    Button btnRA, btnDic, btnTrad;
+    Button btnRA, btnDic, btnTrad, opciones;
     private static final int TIME_LIMIT = 1500;
     private static long backPressed;
     @Override
@@ -23,6 +23,8 @@ public class Menu_select extends AppCompatActivity {
         btnRA=findViewById(R.id.ButRA);
         btnDic=findViewById(R.id.ButDic);
         btnTrad=findViewById(R.id.ButTrad);
+        opciones=findViewById(R.id.Boton_Opciones);
+
         btnRA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,6 +48,13 @@ public class Menu_select extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent (Menu_select.this,Traductor.class);
+                startActivity(intent);
+            }
+        });
+        opciones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (Menu_select.this, UserOptions.class);
                 startActivity(intent);
             }
         });
