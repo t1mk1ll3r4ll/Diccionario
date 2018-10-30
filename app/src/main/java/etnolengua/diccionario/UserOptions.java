@@ -24,6 +24,7 @@ public class UserOptions extends AppCompatActivity {
                 mAuth.signOut();
                 Intent intent = new Intent(UserOptions.this, Bienvenida.class);
                 startActivity(intent);
+                finish();
             }
         });
         CambioContra.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +32,7 @@ public class UserOptions extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(UserOptions.this, cambioContra.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

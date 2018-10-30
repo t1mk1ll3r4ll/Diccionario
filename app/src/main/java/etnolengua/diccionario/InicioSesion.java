@@ -89,7 +89,7 @@ public class InicioSesion extends AppCompatActivity {
                         else {
                             Intent intent = new Intent(InicioSesion.this, Verificacion.class);
                             startActivity(intent);
-                            finish();
+                            
                         }
                     } else {
                         Toast.makeText(getApplicationContext(), "Correo o contraseña incorrectos \n\t\t\t\t\t verifique datos", Toast.LENGTH_SHORT).show();
