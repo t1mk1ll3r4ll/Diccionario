@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -44,10 +46,19 @@ public class cambioContra extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(Email,antigua).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    mAuth.getCurrentUser().updatePassword(nueva);
-                    Intent intent = new Intent (cambioContra.this,Bienvenida.class);
-                    startActivity(intent);
-                    finish();
+                    mAuth.getCurrentUser().updatePassword(nueva).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(getApplicationContext(),"La contraseña se ha cambiado correctamente",Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent (cambioContra.this,Bienvenida.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
+                    });
+
+
                 }
             });
 
