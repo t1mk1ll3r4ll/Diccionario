@@ -18,9 +18,10 @@ import com.google.firebase.auth.FirebaseUser;
 public class InicioSesion extends AppCompatActivity {
     EditText tvEmail;
     EditText tvContra;
-    Button iniciar,recupera;
+    Button iniciar,recupera, crea;
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener Listener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class InicioSesion extends AppCompatActivity {
         tvContra = findViewById(R.id.contra);
         iniciar = findViewById(R.id.IniciarFormBut);
         recupera = findViewById(R.id.reccon);
+        crea= findViewById(R.id.creaCuentaInicioSesion);
         mAuth = FirebaseAuth.getInstance();
         Listener= new FirebaseAuth.AuthStateListener() {
             @Override
@@ -54,6 +56,14 @@ public class InicioSesion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 recuperarcontra();
+            }
+        });
+        crea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent (InicioSesion.this, Registro.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
@@ -89,7 +99,7 @@ public class InicioSesion extends AppCompatActivity {
                         else {
                             Intent intent = new Intent(InicioSesion.this, Verificacion.class);
                             startActivity(intent);
-                            
+
                         }
                     } else {
                         Toast.makeText(getApplicationContext(), "Correo o contraseña incorrectos \n\t\t\t\t\t verifique datos", Toast.LENGTH_SHORT).show();
@@ -102,6 +112,13 @@ public class InicioSesion extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(Listener);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent (getApplicationContext(),Bienvenida.class);
+        startActivity(intent);
     }
 
     @Override

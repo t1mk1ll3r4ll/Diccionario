@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cambioContra">
+    tools:context=".cambioContra"
+    android:background="#efefef">
 
     <TextView
         android:id="@+id/textView11"
@@ -17,7 +18,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/oldpassword" />
+        app:layout_constraintTop_toBottomOf="@+id/oldpassword"
+        android:textColor="#2d2d2d"/>
 
     <EditText
         android:id="@+id/camcon1"
@@ -29,7 +31,8 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        android:textColor="#2d2d2d"/>
 
     <TextView
         android:id="@+id/textView12"
@@ -42,7 +45,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/camcon1" />
+        app:layout_constraintTop_toBottomOf="@+id/camcon1"
+        android:textColor="#2d2d2d"/>
 
     <EditText
         android:id="@+id/camcon2"
@@ -54,7 +58,8 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        android:textColor="#2d2d2d"/>
 
     <TextView
         android:id="@+id/textView13"
@@ -65,7 +70,8 @@
         android:textSize="@dimen/_23sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#2d2d2d"/>
 
     <EditText
         android:id="@+id/oldpassword"
@@ -77,7 +83,8 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        android:textColor="#2d2d2d"/>
 
     <Button
         android:id="@+id/butcamcon"
@@ -87,11 +94,12 @@
         android:layout_marginTop="52dp"
         android:background="@drawable/butdiccionlet"
         android:text="Cambiar contraseña"
-        android:textColor="#ffffff"
+        android:textColor="#2d2d2d"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/camcon2"
-        app:layout_constraintVertical_bias="0.49" />
+        app:layout_constraintVertical_bias="0.49"
+        />
 </android.support.constraint.ConstraintLayout>
