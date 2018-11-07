@@ -113,14 +113,12 @@ public class InicioSesion extends AppCompatActivity {
         super.onStart();
         mAuth.addAuthStateListener(Listener);
     }
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         Intent intent = new Intent (getApplicationContext(),Bienvenida.class);
         startActivity(intent);
     }
-
     @Override
     protected void onStop() {
         super.onStop();
