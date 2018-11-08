@@ -4,102 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#efefef"
     tools:context=".cambioContra"
-    android:background="#efefef">
+    tools:layout_editor_absoluteY="81dp">
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="match_parent"
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/camcon1"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="Ingresa tu nueva contraseña:"
-        android:textSize="@dimen/_23sdp"
-        android:textStyle="bold"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="39dp"
+        android:ems="10"
+        android:hint="Nueva contraseña"
+        android:inputType="textPassword"
+        android:textColor="#2d2d2d"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/oldpassword"
-        android:textColor="#2d2d2d"/>
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelTextColor="#03dac6"
+        app:met_floatingLabelTextSize="@dimen/_15sdp" />
 
-    <EditText
-        android:id="@+id/camcon1"
-        android:layout_width="match_parent"
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/camcon2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="51dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="39dp"
         android:ems="10"
-        android:hint="Nueva contraseña"
+        android:hint="Confirme su contraseña"
         android:inputType="textPassword"
+        android:textColor="#2d2d2d"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        android:textColor="#2d2d2d"/>
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:text="Confirma tu nueva contraseña:"
-        android:textSize="@dimen/_22sdp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/camcon1"
-        android:textColor="#2d2d2d"/>
-
-    <EditText
-        android:id="@+id/camcon2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:ems="10"
-        android:hint="Nueva contraseña"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
-        android:textColor="#2d2d2d"/>
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelTextColor="#03dac6"
+        app:met_floatingLabelTextSize="@dimen/_15sdp" />
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Ingresa tu antigua contraseña:"
+        android:text="Cambio de contraseña"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="#2d2d2d"
         android:textSize="@dimen/_23sdp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="#2d2d2d"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/oldpassword"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="112dp"
         android:ems="10"
         android:hint="Contraseña antigua"
         android:inputType="textPassword"
+        android:textColor="#2d2d2d"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13"
-        android:textColor="#2d2d2d"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelTextColor="#03dac6"
+        app:met_floatingLabelTextSize="@dimen/_15sdp" />
 
     <Button
         android:id="@+id/butcamcon"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginBottom="151dp"
+        android:layout_marginTop="149dp"
         android:background="@drawable/butdiccionlet"
         android:text="Cambiar contraseña"
         android:textColor="#2d2d2d"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/camcon2"
-        app:layout_constraintVertical_bias="0.49"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/camcon2" />
 </android.support.constraint.ConstraintLayout>

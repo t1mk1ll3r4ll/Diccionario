@@ -42,6 +42,10 @@ public class cambioContra extends AppCompatActivity {
         final String nueva=newpass.getText().toString();
         final String nuevaC= newpassC.getText().toString();
         String Email=mAuth.getCurrentUser().getEmail();
+        if(!nueva.equals(nuevaC)){
+            newpass.setError("las contraseñas no son iguales");
+            newpassC.setError("las contraseñas no son iguales");
+        }
         if(nueva.equals(nuevaC)) {
             mAuth.signInWithEmailAndPassword(Email,antigua).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -49,16 +53,18 @@ public class cambioContra extends AppCompatActivity {
                     mAuth.getCurrentUser().updatePassword(nueva).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful()){
-                                Toast.makeText(getApplicationContext(),"La contraseña se ha cambiado correctamente",Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent (cambioContra.this,Bienvenida.class);
+                            if (task.isSuccessful()) {
+                                Toast.makeText(getApplicationContext(), "La contraseña se ha cambiado correctamente", Toast.LENGTH_LONG).show();
+                                mAuth.signOut();
+                                Intent intent = new Intent(cambioContra.this, Bienvenida.class);
                                 startActivity(intent);
                                 finish();
                             }
+                            else {
+                                oldpass.setError("La contraseña no es correcta, intenta de nuevo");
+                            }
                         }
                     });
-
-
                 }
             });
 
