@@ -5,10 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Bienvenida extends AppCompatActivity {
 
     Button btnregistrar, btniniciar;
+    private static final int TIME_LIMIT = 1500;
+    private static long backPressed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,5 +36,14 @@ public class Bienvenida extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    public void onBackPressed() {
+        if(TIME_LIMIT+backPressed>System.currentTimeMillis()){
+            super.onBackPressed();
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"Presiona de nuevo para salir",Toast.LENGTH_LONG).show();
+        }
+        backPressed=System.currentTimeMillis();
     }
 }

@@ -33,41 +33,64 @@ public class cambioContra extends AppCompatActivity {
         cambiarContrasena.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(!oldpass.getText().toString().isEmpty()|| !newpass.getText().toString().isEmpty()|| !newpassC.toString().isEmpty()){
                 cambio();
-            }
+                }
+
+                    if(oldpass.getText().toString().isEmpty()){
+                        oldpass.setError("Ingrese su antigua contraseña");}
+                    else if(newpass.getText().toString().isEmpty()) {
+                        newpass.setError("Ingrese su nueva contraseña");
+                    }
+                    else if (newpassC.getText().toString().isEmpty()){
+                        newpassC.setError("Ingrese de nuevo su nueva contraseña");
+                    }
+                }
+
         });
     }
     public void cambio(){
         String antigua=oldpass.getText().toString();
         final String nueva=newpass.getText().toString();
         final String nuevaC= newpassC.getText().toString();
-        String Email=mAuth.getCurrentUser().getEmail();
+        final String Email=mAuth.getCurrentUser().getEmail();
         if(!nueva.equals(nuevaC)){
             newpass.setError("las contraseñas no son iguales");
             newpassC.setError("las contraseñas no son iguales");
         }
-        if(nueva.equals(nuevaC)) {
-            mAuth.signInWithEmailAndPassword(Email,antigua).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    mAuth.getCurrentUser().updatePassword(nueva).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(getApplicationContext(), "La contraseña se ha cambiado correctamente", Toast.LENGTH_LONG).show();
-                                mAuth.signOut();
-                                Intent intent = new Intent(cambioContra.this, Bienvenida.class);
-                                startActivity(intent);
-                                finish();
+        if(nueva.equals(nuevaC) && !nueva.isEmpty()) {
+            try {
+                mAuth.signInWithEmailAndPassword(Email, antigua).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        mAuth.getCurrentUser().updatePassword(nueva).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(getApplicationContext(), "La contraseña se ha cambiado correctamente", Toast.LENGTH_LONG).show();
+                                    mAuth.signOut();
+                                    Intent intent = new Intent(cambioContra.this, Bienvenida.class);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    oldpass.setError("La contraseña no es correcta, intenta de nuevo");
+                                }
                             }
-                            else {
-                                oldpass.setError("La contraseña no es correcta, intenta de nuevo");
-                            }
-                        }
-                    });
-                }
-            });
+                        });
+                    }
+                });
 
+            }catch(NullPointerException e) {
+                Toast.makeText(getApplicationContext(),"oh oh... A ocurrido un error. lo sentimos",Toast.LENGTH_LONG).show();
+            }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(),Menu_select.class);
+        startActivity(intent);
+        finish();
     }
 }

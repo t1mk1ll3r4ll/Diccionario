@@ -10,18 +10,17 @@
 
     <Button
         android:id="@+id/IniciarFormBut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="202dp"
+        android:layout_height="39dp"
         android:layout_marginBottom="200dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/botonsesion"
-        android:text="Inicar sesión"
-        android:textColor="#2d2d2d"
+        android:text="Iniciar sesión"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
         android:textSize="@dimen/_15sdp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contra" />
 
@@ -42,6 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:met_floatingLabel="highlight"
+        app:met_primaryColor="#3cb296"
         app:met_floatingLabelTextColor="#03dac6"
         app:met_floatingLabelTextSize="@dimen/_15sdp" />
 
@@ -63,6 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/correo"
         app:met_floatingLabel="highlight"
         app:met_floatingLabelTextColor="#03dac6"
+        app:met_primaryColor="#3cb296"
         app:met_floatingLabelTextSize="@dimen/_15sdp" />
 
     <TextView
@@ -88,15 +89,16 @@
 
     <Button
         android:id="@+id/reccon"
-        android:layout_width="wrap_content"
+        android:layout_width="109dp"
         android:layout_height="27dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/botonsesion"
-        android:text="¡Recuperala!"
-        android:textColor="#2d2d2d"
+        android:background="@drawable/btnround2"
+        android:text="¡Recupérala!"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -108,7 +110,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="47dp"
         android:layout_marginTop="25dp"
-        android:text="Inicio de Sesión"
+        android:text="Inicio de sesión"
+        android:fontFamily="sans-serif-thin"
+        android:textStyle="bold"
         android:textSize="@dimen/_32sdp"
         app:layout_constraintBottom_toTopOf="@+id/correo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -138,17 +142,34 @@
 
     <Button
         android:id="@+id/creaCuentaInicioSesion"
-        android:layout_width="95dp"
+        android:layout_width="109dp"
         android:layout_height="27dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/botonsesion"
+        android:background="@drawable/btnround2"
         android:text="¡Crea una!"
-        android:textColor="#2d2d2d"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.928" />
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contra" />
 </android.support.constraint.ConstraintLayout>

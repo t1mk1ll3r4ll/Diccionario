@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -14,10 +15,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.ProviderQueryResult;
 
 public class InicioSesion extends AppCompatActivity {
     EditText tvEmail;
     EditText tvContra;
+    ProgressBar barra;
     Button iniciar,recupera, crea;
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener Listener;
@@ -33,6 +36,8 @@ public class InicioSesion extends AppCompatActivity {
         recupera = findViewById(R.id.reccon);
         crea= findViewById(R.id.creaCuentaInicioSesion);
         mAuth = FirebaseAuth.getInstance();
+        barra=findViewById(R.id.progressBar3);
+        barra.setVisibility(View.INVISIBLE);
         Listener= new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -49,6 +54,8 @@ public class InicioSesion extends AppCompatActivity {
         iniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                barra.setVisibility(View.VISIBLE);
+                iniciar.setVisibility(View.INVISIBLE);
                 ingresar();
             }
         });
@@ -91,7 +98,7 @@ public class InicioSesion extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         if(mAuth.getCurrentUser().isEmailVerified()) {
-                            Toast.makeText(getApplicationContext(), "Inicio correcto", Toast.LENGTH_SHORT).show();
+                            barra.setVisibility(View.INVISIBLE);
                             Intent intent = new Intent(InicioSesion.this, Menu_select.class);
                             startActivity(intent);
                             finish();
@@ -102,8 +109,24 @@ public class InicioSesion extends AppCompatActivity {
 
                         }
                     } else {
-                        Toast.makeText(getApplicationContext(), "Correo o contraseña incorrectos \n\t\t\t\t\t verifique datos", Toast.LENGTH_SHORT).show();
+                       mAuth.fetchProvidersForEmail(tvEmail.getText().toString()).addOnCompleteListener(new OnCompleteListener<ProviderQueryResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<ProviderQueryResult> task) {
+                                if(task.isSuccessful()) {
+                                    iniciar.setVisibility(View.VISIBLE);
+                                    barra.setVisibility(View.INVISIBLE);
+                                    tvContra.setError("Contaseña incorrecta");
 
+                                }
+                                else {
+                                    iniciar.setVisibility(View.VISIBLE);
+                                    barra.setVisibility(View.INVISIBLE);
+                                    tvContra.setError("Contraseña incorrecta");
+                                    tvEmail.setError("Correo Incorrecto");
+                                }
+                            }
+
+                        });
                     }
                 }
             });
