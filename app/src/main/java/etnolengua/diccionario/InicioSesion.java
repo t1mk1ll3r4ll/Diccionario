@@ -92,7 +92,11 @@ public class InicioSesion extends AppCompatActivity {
     public void ingresar(){
         String email = tvEmail.getText().toString();
         String contra = tvContra.getText().toString();
-        if (!email.isEmpty() && !contra.isEmpty()) {
+        if(!email.contains("@") && !email.isEmpty()){
+            tvEmail.setError("Correo no valido, recuerda que necesita un '@' ");
+            barra.setVisibility(View.INVISIBLE);
+            iniciar.setVisibility(View.VISIBLE);
+        }else if (!email.isEmpty() && !contra.isEmpty() && email.contains("@")) {
             mAuth.signInWithEmailAndPassword(email, contra).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -106,6 +110,7 @@ public class InicioSesion extends AppCompatActivity {
                         else {
                             Intent intent = new Intent(InicioSesion.this, Verificacion.class);
                             startActivity(intent);
+                            finish();
 
                         }
                     } else {
@@ -130,7 +135,15 @@ public class InicioSesion extends AppCompatActivity {
                     }
                 }
             });
+        }else if (email.isEmpty()){
+            tvEmail.setError("Ingrese su correo");
+            iniciar.setVisibility(View.VISIBLE);
+            barra.setVisibility(View.INVISIBLE);
         }
+            else if(contra.isEmpty()){
+            tvContra.setError("ingrese su contraseña");
+            iniciar.setVisibility(View.VISIBLE);
+            barra.setVisibility(View.INVISIBLE);}
     }
     protected void onStart() {
         super.onStart();

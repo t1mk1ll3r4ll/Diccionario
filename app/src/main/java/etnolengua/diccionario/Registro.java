@@ -14,7 +14,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.ProviderQueryResult;
 
 public class Registro extends AppCompatActivity {
     EditText CorreoReg;
@@ -58,30 +57,46 @@ public class Registro extends AppCompatActivity {
         final String pass = ContraReg.getText().toString();
         if (email.isEmpty()) {
             CorreoReg.setError("Ingrese un correo");
-            return;
-        }
-        if (pass.isEmpty()) {
+            RegBut.setVisibility(View.VISIBLE);
+            barra.setVisibility(View.INVISIBLE);
+
+
+        }else if (pass.isEmpty()) {
             ContraReg.setError("Ingrese una contraseña");
-            return;
-        }
-        mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Toast.makeText(Registro.this, "Registro completado", Toast.LENGTH_SHORT).show();
-                    barra.setVisibility(View.INVISIBLE);
-                    Intent intent = new Intent(Registro.this, InicioSesion.class);
-                    startActivity(intent);
-                    finish();
-                } else {
-                    barra.setVisibility(View.INVISIBLE);
-                    RegBut.setVisibility(View.VISIBLE);
-                    CorreoReg.setError("El correo ya se encuentra registrado, Intenta iniciar sesión");
-                    ContraReg.setError("O intenta recuperar tu contraseña");
+            RegBut.setVisibility(View.VISIBLE);
+            barra.setVisibility(View.INVISIBLE);
+        }else if(pass.contains(" ")){
+            ContraReg.setError("la contraseña no debe contener espacios, intenta de nuevo");
+            RegBut.setVisibility(View.VISIBLE);
+            barra.setVisibility(View.INVISIBLE);
+        }else if(!email.contains("@")) {
+            CorreoReg.setError("El correo debe contener '@'");
+            RegBut.setVisibility(View.VISIBLE);
+            barra.setVisibility(View.INVISIBLE);
+
+        }else if((pass.length())<6){
+            ContraReg.setError("la contraseña debe ser mayor a 6 caracteres");
+            RegBut.setVisibility(View.VISIBLE);
+            barra.setVisibility(View.INVISIBLE);
+        }else
+            mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(Registro.this, "Registro completado", Toast.LENGTH_SHORT).show();
+                        barra.setVisibility(View.INVISIBLE);
+                        Intent intent = new Intent(Registro.this, InicioSesion.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        barra.setVisibility(View.INVISIBLE);
+                        RegBut.setVisibility(View.VISIBLE);
+                        CorreoReg.setError("El correo ya se encuentra registrado, Intenta iniciar sesión");
+                        ContraReg.setError("O intenta recuperar tu contraseña");
+                    }
                 }
-            }
-        });
-    }
+            });
+        }
 
     @Override
     public void onBackPressed() {

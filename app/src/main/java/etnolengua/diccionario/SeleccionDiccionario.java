@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 
 public class SeleccionDiccionario extends AppCompatActivity {
 
@@ -30,17 +31,24 @@ public class SeleccionDiccionario extends AppCompatActivity {
         startActivity(intentd);
     }
     public void e(View view){
-        Intent intente=new Intent (SeleccionDiccionario.this, ListViewB.class);
+        Intent intente=new Intent (SeleccionDiccionario.this, ListViewE.class);
         startActivity(intente);
     }
-    public void f(View view){
-        Intent intentf=new Intent (SeleccionDiccionario.this, ListViewB.class);
+    public void FG(View view){
+        Intent intentf=new Intent (SeleccionDiccionario.this, ListViewF.class);
         startActivity(intentf);
     }
-    public void g(View view){
-        Intent intentg=new Intent (SeleccionDiccionario.this, ListViewB.class);
+    public void HI(View view){
+        Intent intentg=new Intent (SeleccionDiccionario.this, ListViewHI.class);
         startActivity(intentg);
     }
-
+    public void JL(View view){
+        Intent intentH=new Intent (getApplicationContext(),ListViewJL.class);
+        startActivity(intentH);
+    }
+    public void MN(View view){
+        Intent intentMN = new Intent(getApplicationContext(), ListViewMN.class);
+        startActivity(intentMN);
+    }
 
 }

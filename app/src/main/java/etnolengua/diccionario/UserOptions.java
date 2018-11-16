@@ -42,16 +42,8 @@ public class UserOptions extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(UserOptions.this, cambioContra.class);
                 startActivity(intent);
-                finish();
             }
         });
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(getApplicationContext(), Menu_select.class);
-        startActivity(intent);
-        finish();
-    }
 }

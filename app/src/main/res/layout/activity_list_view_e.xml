@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListViewD"
+    tools:context=".ListViewE"
     android:background="#efefef">
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:fontFamily="sans-serif-thin"
-        android:text='"D"'
+        android:text='"E"'
         android:textColor="#2D2D2D"
         android:textSize="@dimen/_25sdp"
         android:textStyle="bold"
@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.41"
-        tools:text='"D"' />
+        tools:text='"E"' />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -38,7 +38,7 @@
         app:srcCompat="@drawable/indeapp" />
 
     <ListView
-        android:id="@+id/listviewD"
+        android:id="@+id/listviewE"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="64dp"

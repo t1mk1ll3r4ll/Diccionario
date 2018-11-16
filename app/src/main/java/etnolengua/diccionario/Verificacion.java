@@ -1,6 +1,8 @@
 package etnolengua.diccionario;
 
 import android.content.Intent;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ public class Verificacion extends AppCompatActivity {
     TextView CorreoTv;
     FirebaseAuth mAuth;
     FirebaseUser usr;
+    int counter=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +27,10 @@ public class Verificacion extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         usr=mAuth.getCurrentUser();
         try {
-            if (usr.getEmail() != null && !mAuth.getCurrentUser().isEmailVerified()) {
+            if (!usr.getEmail().isEmpty()  && !mAuth.getCurrentUser().isEmailVerified()) {
                 CorreoTv.setText(usr.getEmail());
                 verificacion();
+
             }
         }
         catch(Exception  NullPointerException) {
@@ -36,27 +40,29 @@ public class Verificacion extends AppCompatActivity {
     }
     public void verificacion(){
             final FirebaseUser user = mAuth.getCurrentUser();
-            try {
+                try {
+                    user.sendEmailVerification().addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(Verificacion.this, "Correo de verificacion enviado a: " + user.getEmail(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Por favor, ingresa de nuevo", Toast.LENGTH_LONG).show();
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Intent intent = new Intent(Verificacion.this, InicioSesion.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                }, 5000);
 
-                user.sendEmailVerification().addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(Verificacion.this,"Correo de verificacion enviado a: " + user.getEmail(),Toast.LENGTH_SHORT).show();
-                            Toast.makeText(getApplicationContext(),"Por favor, ingresa de nuevo",Toast.LENGTH_LONG).show();
-                            if(user.isEmailVerified()){
-                            onBackPressed();}
-                        } else {
-                            Toast.makeText(getApplicationContext(),
-                                    "Se produjo un error, intenta mas tarde",
-                                    Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Se produjo un error, intenta mas tarde", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
-            }
-            catch (NullPointerException exception){
-                Toast.makeText(this, "Se produjo un error", Toast.LENGTH_SHORT).show();
-            }
-
+                    });
+                } catch (NullPointerException exception) {
+                    Toast.makeText(this, "Se produjo un error", Toast.LENGTH_SHORT).show();
+                }
     }
 }

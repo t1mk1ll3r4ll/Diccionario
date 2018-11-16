@@ -54,10 +54,14 @@ public class cambioContra extends AppCompatActivity {
         final String nueva=newpass.getText().toString();
         final String nuevaC= newpassC.getText().toString();
         final String Email=mAuth.getCurrentUser().getEmail();
-        if(!nueva.equals(nuevaC)){
+
+        if(!nueva.isEmpty()&& nuevaC.isEmpty()){
+            newpassC.setError("Ingrese de nuevo su contraseña");
+        }else if(!nueva.equals(nuevaC)){
             newpass.setError("las contraseñas no son iguales");
             newpassC.setError("las contraseñas no son iguales");
         }
+
         if(nueva.equals(nuevaC) && !nueva.isEmpty()) {
             try {
                 mAuth.signInWithEmailAndPassword(Email, antigua).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
