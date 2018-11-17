@@ -77,16 +77,24 @@ public class InicioSesion extends AppCompatActivity {
     public void recuperarcontra() {
         try {
             String email = tvEmail.getText().toString();
+            if(email.isEmpty())
+            {
+                tvEmail.setError("ingresa tu correo en el espacio de arriba");
+
+            }else if (!email.contains("@")){
+                tvEmail.setError("el correo debe contener @");
+            }else{
             mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     Toast.makeText(getApplicationContext(), "Se ha enviado en correo de recuperacion de contraseña", Toast.LENGTH_LONG).show();
                 }
-            });
+            });}
 
 
         } catch (Exception nullPointerException) {
-            Toast.makeText(getApplicationContext(), "ingresa tu correo en el espacio de arriba", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "ha ocurrido un error, lo sentimos", Toast.LENGTH_LONG).show();
+
         }
     }
     public void ingresar(){
@@ -139,8 +147,7 @@ public class InicioSesion extends AppCompatActivity {
             tvEmail.setError("Ingrese su correo");
             iniciar.setVisibility(View.VISIBLE);
             barra.setVisibility(View.INVISIBLE);
-        }
-            else if(contra.isEmpty()){
+        }else if(contra.isEmpty()){
             tvContra.setError("ingrese su contraseña");
             iniciar.setVisibility(View.VISIBLE);
             barra.setVisibility(View.INVISIBLE);}

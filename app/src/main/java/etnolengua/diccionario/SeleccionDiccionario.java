@@ -50,5 +50,30 @@ public class SeleccionDiccionario extends AppCompatActivity {
         Intent intentMN = new Intent(getApplicationContext(), ListViewMN.class);
         startActivity(intentMN);
     }
+    public void OP(View view){
+        Intent intentOP = new Intent(getApplicationContext(), ListViewOP.class);
+        startActivity(intentOP);
+    }
+    public void QR(View view){
+        Intent intentQR = new Intent(getApplicationContext(), ListViewQR.class);
+        startActivity(intentQR);
+    }
+    public void S(View view){
+        Intent intentS = new Intent(getApplicationContext(), ListViewS.class);
+        startActivity(intentS);
+    }
+    public void T(View view){
+        Intent intentT = new Intent(getApplicationContext(), ListViewT.class);
+        startActivity(intentT);
+    }
+    public void UV(View view){
+        Intent intentUV = new Intent(getApplicationContext(), ListViewUV.class);
+        startActivity(intentUV);
+    }
+    public void YZ(View view){
+        Intent intentYZ= new Intent(getApplicationContext(), ListViewYZ.class);
+        startActivity(intentYZ);
+    }
+
 
 }

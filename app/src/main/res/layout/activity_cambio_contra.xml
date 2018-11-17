@@ -27,7 +27,8 @@
         app:met_floatingLabel="highlight"
         app:met_floatingLabelTextColor="#03dac6"
         app:met_floatingLabelTextSize="@dimen/_15sdp"
-        app:met_primaryColor="#3cb296" />
+        app:met_primaryColor="#3cb296"
+        app:met_minCharacters="6"/>
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/camcon2"
@@ -48,7 +49,8 @@
         app:met_floatingLabel="highlight"
         app:met_floatingLabelTextColor="#03dac6"
         app:met_floatingLabelTextSize="@dimen/_15sdp"
-        app:met_primaryColor="#3cb296"/>
+        app:met_primaryColor="#3cb296"
+        app:met_minCharacters="6"/>
 
     <TextView
         android:id="@+id/textView13"

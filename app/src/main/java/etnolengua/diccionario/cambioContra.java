@@ -33,18 +33,19 @@ public class cambioContra extends AppCompatActivity {
         cambiarContrasena.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!oldpass.getText().toString().isEmpty()|| !newpass.getText().toString().isEmpty()|| !newpassC.toString().isEmpty()){
+                if(oldpass.getText().toString().isEmpty()){
+                    oldpass.setError("Ingrese su antigua contraseña");
+                }else if(newpass.getText().toString().isEmpty()) {
+                    newpass.setError("Ingrese su nueva contraseña");
+                }else if (newpassC.getText().toString().isEmpty()){
+                    newpassC.setError("Ingrese de nuevo su nueva contraseña");
+                }else if(newpass.getText().toString().length()<6) {
+                    newpass.setError("La contraseña debe ser mayor a 6 caracteres");
+                }else if(!oldpass.getText().toString().isEmpty()|| !newpass.getText().toString().isEmpty()|| !newpassC.toString().isEmpty()){
                 cambio();
                 }
 
-                    if(oldpass.getText().toString().isEmpty()){
-                        oldpass.setError("Ingrese su antigua contraseña");}
-                    else if(newpass.getText().toString().isEmpty()) {
-                        newpass.setError("Ingrese su nueva contraseña");
-                    }
-                    else if (newpassC.getText().toString().isEmpty()){
-                        newpassC.setError("Ingrese de nuevo su nueva contraseña");
-                    }
+
                 }
 
         });
@@ -93,7 +94,7 @@ public class cambioContra extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(getApplicationContext(),Menu_select.class);
+        Intent intent = new Intent(getApplicationContext(),UserOptions.class);
         startActivity(intent);
         finish();
     }

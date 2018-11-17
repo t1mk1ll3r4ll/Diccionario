@@ -56,7 +56,7 @@ public class Menu_select extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent (Menu_select.this, UserOptions.class);
                 startActivity(intent);
-                finish();
+
             }
         });
     }
