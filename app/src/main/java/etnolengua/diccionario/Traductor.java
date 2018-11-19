@@ -2,7 +2,9 @@ package etnolengua.diccionario;
 
 import android.content.Context;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -12,6 +14,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -19,8 +22,7 @@ import android.widget.VideoView;
 
 public class Traductor extends AppCompatActivity {
     EditText ETtrad;
-    Button btnTrad;
-    TextView texttrad;
+    TextView texttrad, pronun;
     Button traducir;
     VideoView Vid;
 
@@ -34,71 +36,103 @@ public class Traductor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_traductor);
 
-         ETtrad=findViewById(R.id.editText3);
-         btnTrad=findViewById(R.id.ButTrad);
-        texttrad=findViewById(R.id.texttrad);
-        traducir=findViewById(R.id.buttontrad);
-        Vid=findViewById(R.id.videoView3);
-        imagen=findViewById(R.id.imageView3);
+        ETtrad = findViewById(R.id.editText3);
+        texttrad = findViewById(R.id.texttrad);
+        pronun = findViewById(R.id.textView4);
+        traducir = findViewById(R.id.buttontrad);
+        Vid = findViewById(R.id.videoView3);
+        imagen = findViewById(R.id.imageView3);
+
+        Vid.setVisibility(View.INVISIBLE);
+        pronun.setVisibility(View.INVISIBLE);
         imagen.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
-                recorre();
-                Video();
-            }
-        });
-        traducir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try{
-                if (puchado==0) {
-                    AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-                    audio.adjustStreamVolume(AudioManager.STREAM_MUSIC,
-                            AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
-                    puchado++;
-                }else if(puchado==1) {
-                    Toast.makeText(getApplicationContext(),"Recuerda subir el volumen para escuchar la pronunciacion",Toast.LENGTH_LONG).show();
-                    puchado++;
-                    }
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(ETtrad.getWindowToken(), 0);
-                }
-                catch (NullPointerException exception) {
-                    Toast.makeText(getApplicationContext(),"se ha producido un error,\n lo sentimos :(",Toast                     .LENGTH_LONG).show();
-                }
-                recorre();
-                Video();
-            }
-        });
-        ETtrad.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
-                    //do what you want on the press of 'done'
-                    if (puchado==0) {
-                        AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-                        audio.adjustStreamVolume(AudioManager.STREAM_MUSIC,
-                                AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
-                        puchado++;
-                    }else if(puchado==1) {
-                        Toast.makeText(getApplicationContext(),"Recuerda subir el volumen para escuchar la pronunciacion",Toast.LENGTH_LONG).show();
-                        puchado++;
-                    }try{
+                traducir.setVisibility(View.INVISIBLE);
+               if (ETtrad.getText().toString().isEmpty()) {
+                    ETtrad.setError("Ingrese una palabra");
+                    traducir.setVisibility(View.VISIBLE);
+                }else {
+                    try {
+                        if (puchado == 0) {
+                            AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                            audio.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                                    AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
+                            puchado++;
+                        } else if (puchado == 1) {
+                            Toast.makeText(getApplicationContext(), "Recuerda subir el volumen para escuchar la pronunciacion", Toast.LENGTH_LONG).show();
+                            puchado++;
+                        }
                         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(ETtrad.getWindowToken(), 0);
-                    }
-                    catch (NullPointerException exception) {
-                        Toast.makeText(getApplicationContext(),"se ha producido un error,\n lo sentimos :(",Toast                     .LENGTH_LONG).show();
+                    } catch (NullPointerException exception) {
+                        Toast.makeText(getApplicationContext(), "se ha producido un error,\n lo sentimos :(", Toast.LENGTH_LONG).show();
                     }
                     recorre();
                     Video();
-
-
                 }
-                return false;
             }
         });
-     }
+
+            traducir.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    traducir.setVisibility(View.INVISIBLE);
+                    if (ETtrad.getText().toString().isEmpty()) {
+                        ETtrad.setError("Ingrese una palabra");
+                        traducir.setVisibility(View.VISIBLE);
+                    } else {
+                        try {
+                            if (puchado == 0) {
+                                AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                                audio.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                                        AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
+                                puchado++;
+                            } else if (puchado == 1) {
+                                Toast.makeText(getApplicationContext(), "Recuerda subir el volumen para escuchar la pronunciacion", Toast.LENGTH_LONG).show();
+                                puchado++;
+                            }
+                            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                            imm.hideSoftInputFromWindow(ETtrad.getWindowToken(), 0);
+                        } catch (NullPointerException exception) {
+                            Toast.makeText(getApplicationContext(), "se ha producido un error,\n lo sentimos :(", Toast.LENGTH_LONG).show();
+                        }
+                        traducir.setVisibility(View.INVISIBLE);
+                        recorre();
+                        Video();
+                    }
+                }
+            });
+
+            ETtrad.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                    if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
+                        //do what you want on the press of 'done'
+                        if (puchado == 0) {
+
+                            AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                            audio.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                            AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
+                            puchado++;
+                        } else if (puchado == 1) {
+                            Toast.makeText(getApplicationContext(), "Recuerda subir el volumen para escuchar la pronunciacion", Toast.LENGTH_LONG).show();
+                            puchado++;
+                        }
+                        try {
+                            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                            imm.hideSoftInputFromWindow(ETtrad.getWindowToken(), 0);
+                        } catch (NullPointerException exception) {
+                            Toast.makeText(getApplicationContext(), "se ha producido un error,\n lo sentimos :(", Toast.LENGTH_LONG).show();
+                        }
+                        Video();
+                        recorre();
+
+                    }
+                    return false;
+                }
+            });
+    }
     public void recorre(){
+        traducir.setVisibility(View.INVISIBLE);
         boolean band =false;
         String tring = ETtrad.getText().toString().toLowerCase();
         if(tring.equals("1")||tring.equals("2")||tring.equals("3")||tring.equals("4")||tring.equals("5")||tring.equals("6")||tring.equals("7")||tring.equals("8")||tring.equals("9")||tring.equals("10")){
@@ -131,8 +165,9 @@ public class Traductor extends AppCompatActivity {
                     break;
                 }
             }
-        if(tring.equals("")) {
-            Toast.makeText(getApplicationContext(), "por favor, ingrese una palabra", Toast.LENGTH_LONG).show();
+        if(tring.isEmpty()) {
+            ETtrad.setError("por favor, ingrese una palabra");
+            traducir.setVisibility(View.VISIBLE);
             band = true;
             }
         }else if(!band){
@@ -145,16 +180,17 @@ public class Traductor extends AppCompatActivity {
             }
         }
             if(!band) {
-                Toast toast = Toast.makeText(getApplicationContext(),"La palabra '"+tring+"' no se encuentra",Toast.LENGTH_LONG);
-                toast.show();
+                ETtrad.setError("La palabra '"+tring+"' no se encuentra");
+                traducir.setVisibility(View.VISIBLE);
+
             }
             else if(band){
                 texttrad.setText(mixe[index]);
-            }
+        }
     }
+
     public void Video(){
-        boolean band1 ;
-        band1= true;
+        hacerVisible();
         String fileplace="android.resource://" + getPackageName() + "/raw/";
         String A = ETtrad.getText().toString().toLowerCase();
 
@@ -163,103 +199,195 @@ public class Traductor extends AppCompatActivity {
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }else if(A.equals("dos")||A.equals("2")) {
+
             String filename="dos";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }else if(A.equals("tres")||A.equals("3")){
             String filename="tres";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }
         else if(A.equals("cuatro")||A.equals("4")){
             String filename="cuatro";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }else if(A.equals("cinco")||A.equals("5")){
             String filename="cinco";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }else if(A.equals("seis")||A.equals("6")){
             String filename="seis";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }
         else if(A.equals("siete")||A.equals("7")){
             String filename="siete";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }else if(A.equals("ocho")||A.equals("8")){
             String filename="ocho";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }else if(A.equals("nueve")||A.equals("9")){
             String filename="nueve";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }else if(A.equals("diez")||A.equals("10")){
             String filename="diez";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }else if(A.equals("boca")){
             String filename="boca";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }else if(A.equals("cabeza")){
             String filename="cabeza";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }else if(A.equals("ombligo")){
             String filename="ombligo";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }else if(A.equals("oreja")){
             String filename="oreja";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }else if(A.equals("pie")) {
             String filename="pie";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }else if(A.equals("ojo")){
             String filename="ojo";
             String rep=fileplace+filename;
             Vid.setVideoURI(Uri.parse(rep));
             Vid.start();
-            band1=false;
+            Vid.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    hacerInvisible();
+                }
+            });
         }
-            if(band1) {
-                Toast.makeText(getApplicationContext(), "la pronunciación de '" + A + "' \n aun no se encuentra disponible", Toast.LENGTH_LONG).show();
-            }
+        else{
+            hacerInvisible();
+        }
+
+
+    }
+    void hacerVisible(){
+        Vid.setVisibility(View.VISIBLE);
+        pronun.setVisibility(View.VISIBLE);
+    }
+    void hacerInvisible(){
+        Vid.setVisibility(View.INVISIBLE);
+        pronun.setVisibility(View.INVISIBLE);
+        traducir.setVisibility(View.VISIBLE);
     }
 }
 

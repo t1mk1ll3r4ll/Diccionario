@@ -62,13 +62,9 @@ ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTRy\src\main\Andro
 	android:label
 		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTRy\src\main\AndroidManifest.xml:9:16-48
 	android:icon
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTRy\src\main\AndroidManifest.xml:9:110-141
-	android:banner
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTRy\src\main\AndroidManifest.xml:9:72-109
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTRy\src\main\AndroidManifest.xml:9:49-80
 	android:theme
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTRy\src\main\AndroidManifest.xml:9:142-195
-	android:isGame
-		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTRy\src\main\AndroidManifest.xml:9:49-71
+		ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTRy\src\main\AndroidManifest.xml:9:81-134
 activity#com.unity3d.player.UnityPlayerNativeActivity
 ADDED from C:\Users\aador\AndroidStudioProjects\Diccionario\ARTRy\src\main\AndroidManifest.xml:10:5-14:16
 	android:screenOrientation

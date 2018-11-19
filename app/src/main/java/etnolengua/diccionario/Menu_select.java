@@ -30,8 +30,6 @@ public class Menu_select extends AppCompatActivity {
             public void onClick(View view) {
                 //Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.HeadApp.ARTry.UnityPlayerActivity");
                 //startActivity( launchIntent );
-                //Intent intent = new Intent(Menu_select.this, TresDeView.class);
-                //startActivity(intent);
                 Toast.makeText(getApplicationContext(),"No presione el botón de regreso hasta que la aplicación cargue completamente",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(Menu_select.this, UnityPlayerActivity.class);
                 startActivity(intent);
