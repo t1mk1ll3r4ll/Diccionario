@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ public class InicioSesion extends AppCompatActivity {
     EditText tvEmail;
     EditText tvContra;
     ProgressBar barra;
+    ImageView hidepass, viewpass;
     Button iniciar,recupera, crea;
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener Listener;
@@ -38,6 +41,8 @@ public class InicioSesion extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         barra=findViewById(R.id.progressBar3);
         barra.setVisibility(View.INVISIBLE);
+        hidepass =findViewById(R.id.HidePassIS);
+        viewpass=findViewById(R.id.ViewPassIS);
         Listener= new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -50,7 +55,25 @@ public class InicioSesion extends AppCompatActivity {
                 }
             }
         };
+        viewpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvContra.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                viewpass.setVisibility(View.INVISIBLE);
+                hidepass.setVisibility(View.VISIBLE);
+                tvContra.setSelection(tvContra.length());
+            }
+        });
+        hidepass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvContra.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                viewpass.setVisibility(View.VISIBLE);
+                hidepass.setVisibility(View.INVISIBLE);
+                tvContra.setSelection(tvContra.length());
 
+            }
+        });
         iniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,7 +173,12 @@ public class InicioSesion extends AppCompatActivity {
         }else if(contra.isEmpty()){
             tvContra.setError("ingrese su contraseña");
             iniciar.setVisibility(View.VISIBLE);
-            barra.setVisibility(View.INVISIBLE);}
+            barra.setVisibility(View.INVISIBLE);
+        }else if (!email.contains("@")){
+            tvEmail.setError("Recuerda, el correo debe llevar un '@'");
+            iniciar.setVisibility(View.VISIBLE);
+            barra.setVisibility(View.INVISIBLE);
+        }
     }
     protected void onStart() {
         super.onStart();

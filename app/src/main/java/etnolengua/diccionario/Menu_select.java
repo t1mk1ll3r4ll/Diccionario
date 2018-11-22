@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.HeadApp.ARTry.UnityPlayerActivity;
+import com.Etnolengua.RealidadAumentada.UnityPlayerActivity;
 
 
 
@@ -28,11 +28,9 @@ public class Menu_select extends AppCompatActivity {
         btnRA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.HeadApp.ARTry.UnityPlayerActivity");
-                //startActivity( launchIntent );
-                Toast.makeText(getApplicationContext(),"No presione el botón de regreso hasta que la aplicación cargue completamente",Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(Menu_select.this, UnityPlayerActivity.class);
-                startActivity(intent);
+               Toast.makeText(getApplicationContext(),"No presione el botón de regreso hasta que la aplicación cargue completamente",Toast.LENGTH_LONG).show();
+               Intent intent = new Intent(Menu_select.this, UnityPlayerActivity.class);
+               startActivity(intent);
             }
         });
         btnDic.setOnClickListener(new View.OnClickListener() {

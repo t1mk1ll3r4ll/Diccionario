@@ -2,11 +2,14 @@ package etnolengua.diccionario;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,6 +23,7 @@ public class cambioContra extends AppCompatActivity {
     Button cambiarContrasena;
     EditText oldpass,newpass,newpassC;
     FirebaseAuth mAuth;
+    ImageView oldVer,oldOcul, newVer, newOcul, newCVer, newCOcul;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +33,77 @@ public class cambioContra extends AppCompatActivity {
         newpassC=findViewById(R.id.camcon2);
         cambiarContrasena=findViewById(R.id.butcamcon);
         mAuth=FirebaseAuth.getInstance();
+
+        oldVer= findViewById(R.id.AntiguaMostrar);
+        oldOcul=findViewById(R.id.AntiguaOcultar);
+        //----
+        newVer= findViewById(R.id.NuevaMostrar);
+        newOcul=findViewById(R.id.NuevaOcultar);
+        //----
+        newCVer= findViewById(R.id.NuevaCMostrar);
+        newCOcul=findViewById(R.id.NuevaCOcultar);
+        //---
+        oldOcul.setVisibility(View.INVISIBLE);
+        newOcul.setVisibility(View.INVISIBLE);
+        newCOcul.setVisibility(View.INVISIBLE);
+
+
+        oldVer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                oldpass.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                oldVer.setVisibility(View.INVISIBLE);
+                oldOcul.setVisibility(View.VISIBLE);
+                oldpass.setSelection(oldpass.length());
+            }
+        });
+        oldOcul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                oldpass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                oldVer.setVisibility(View.VISIBLE);
+                oldOcul.setVisibility(View.INVISIBLE);
+                oldpass.setSelection(oldpass.length());
+            }
+        });
+        //------------------------------------------------------------------------------------------
+        newVer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                newpass.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                newVer.setVisibility(View.INVISIBLE);
+                newOcul.setVisibility(View.VISIBLE);
+                newpass.setSelection(newpass.length());
+            }
+        });
+        newOcul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                newpass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                newVer.setVisibility(View.VISIBLE);
+                newOcul.setVisibility(View.INVISIBLE);
+                newpass.setSelection(newpass.length());
+            }
+        });
+        //------------------------------------------------------------------------------------------
+        newCVer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                newpassC.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                newCVer.setVisibility(View.INVISIBLE);
+                newCOcul.setVisibility(View.VISIBLE);
+                newpassC.setSelection(newpassC.length());
+            }
+        });
+        newCOcul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                newpassC.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                newCVer.setVisibility(View.VISIBLE);
+                newCOcul.setVisibility(View.INVISIBLE);
+                newpassC.setSelection(newpassC.length());
+            }
+        });
 
         cambiarContrasena.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,15 +116,14 @@ public class cambioContra extends AppCompatActivity {
                     newpassC.setError("Ingrese de nuevo su nueva contraseña");
                 }else if(newpass.getText().toString().length()<6) {
                     newpass.setError("La contraseña debe ser mayor a 6 caracteres");
-                }else if(!oldpass.getText().toString().isEmpty()|| !newpass.getText().toString().isEmpty()|| !newpassC.toString().isEmpty()){
+                }else if(!oldpass.getText().toString().isEmpty()|| !newpass.getText().toString().isEmpty()|| !newpassC.toString().isEmpty() && newpass.getText().toString().equals(newpassC.getText().toString())){
                 cambio();
                 }
-
-
                 }
 
         });
     }
+    
     public void cambio(){
         String antigua=oldpass.getText().toString();
         final String nueva=newpass.getText().toString();

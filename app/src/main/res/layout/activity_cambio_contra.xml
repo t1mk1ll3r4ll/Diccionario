@@ -106,4 +106,111 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/camcon2" />
+
+    <ImageView
+        android:id="@+id/AntiguaMostrar"
+        android:clickable="true"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/oldpassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/oldpassword"
+        app:layout_constraintTop_toTopOf="@+id/oldpassword"
+        app:srcCompat="@drawable/visible" />
+
+    <ImageView
+        android:id="@+id/AntiguaOcultar"
+        android:clickable="true"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/oldpassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/oldpassword"
+        app:layout_constraintTop_toTopOf="@+id/oldpassword"
+        app:srcCompat="@drawable/visibleoff" />
+
+    <ImageView
+        android:id="@+id/NuevaMostrar"
+        android:layout_width="wrap_content"
+        android:clickable="true"
+
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/camcon1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/camcon1"
+        app:layout_constraintTop_toTopOf="@+id/camcon1"
+        app:srcCompat="@drawable/visible" />
+
+    <ImageView
+        android:id="@+id/NuevaOcultar"
+        android:clickable="true"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/camcon1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/camcon1"
+        app:layout_constraintTop_toTopOf="@+id/camcon1"
+        app:srcCompat="@drawable/visibleoff" />
+
+    <ImageView
+        android:id="@+id/NuevaCMostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+
+        app:layout_constraintBottom_toBottomOf="@+id/camcon2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/camcon2"
+        app:layout_constraintTop_toTopOf="@+id/camcon2"
+        app:srcCompat="@drawable/visible" />
+
+    <ImageView
+        android:id="@+id/NuevaCOcultar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/camcon2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/camcon2"
+        app:layout_constraintTop_toTopOf="@+id/camcon2"
+        app:srcCompat="@drawable/visibleoff" />
 </android.support.constraint.ConstraintLayout>

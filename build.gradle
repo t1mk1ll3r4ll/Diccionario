@@ -16,6 +16,9 @@ buildscript {
 
 allprojects {
     repositories {
+        flatDir{
+            dirs 'C:\\Users\\aador\\AndroidStudioProjects\\Diccionario\\RealidadAumentada\\libs'
+        }
         google()
         jcenter()
     }

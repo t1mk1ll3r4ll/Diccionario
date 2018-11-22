@@ -1,12 +1,17 @@
 package etnolengua.diccionario;
 
 import android.content.Intent;
+import android.graphics.Rect;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
+import android.text.method.PasswordTransformationMethod;
+import android.text.method.TransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -21,17 +26,20 @@ public class Registro extends AppCompatActivity {
     Button RegBut, inicbut;
     FirebaseAuth mAuth;
     ProgressBar barra;
-
+    ImageView viewpass, hidepass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
         CorreoReg = findViewById(R.id.CorreoRegistro);
-        ContraReg = findViewById(R.id.ContraRegistro);
+        ContraReg=findViewById(R.id.ContraRegistro);
         RegBut = findViewById(R.id.RegButton);
         mAuth = FirebaseAuth.getInstance();
         barra = findViewById(R.id.progressBar2);
         barra.setVisibility(View.INVISIBLE);
+        viewpass=findViewById(R.id.ViewPass);
+        hidepass=findViewById(R.id.HidePass);
+        hidepass.setVisibility(View.INVISIBLE);
         RegBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,6 +55,25 @@ public class Registro extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), InicioSesion.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+        viewpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContraReg.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                viewpass.setVisibility(View.INVISIBLE);
+                hidepass.setVisibility(View.VISIBLE);
+                ContraReg.setSelection(ContraReg.length());
+            }
+        });
+        hidepass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContraReg.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                viewpass.setVisibility(View.VISIBLE);
+                hidepass.setVisibility(View.INVISIBLE);
+                ContraReg.setSelection(ContraReg.length());
+
             }
         });
 
