@@ -8,7 +8,7 @@
 
     <uses-sdk
         android:minSdkVersion="16"
-        android:targetSdkVersion="27" />
+        android:targetSdkVersion="28" />
 
     <supports-screens
         android:anyDensity="true"
@@ -44,6 +44,7 @@
     <application
         android:banner="@drawable/app_banner"
         android:icon="@mipmap/app_icon"
+        android:isGame="false"
         android:label="@string/app_name"
         android:theme="@style/UnityThemeSelector" >
         <activity
@@ -60,7 +61,7 @@
 
         <meta-data
             android:name="unity.build-id"
-            android:value="9ecd20c7-5abe-452d-ad8b-3d5596b08a5f" />
+            android:value="77270160-d4d1-4576-b78c-f68d7b0d2b5b" />
         <meta-data
             android:name="unity.splash-mode"
             android:value="0" />

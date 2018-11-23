@@ -36,6 +36,7 @@ public class cambioContra extends AppCompatActivity {
 
         oldVer= findViewById(R.id.AntiguaMostrar);
         oldOcul=findViewById(R.id.AntiguaOcultar);
+
         //----
         newVer= findViewById(R.id.NuevaMostrar);
         newOcul=findViewById(R.id.NuevaOcultar);

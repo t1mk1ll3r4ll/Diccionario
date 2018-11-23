@@ -132,5 +132,17 @@
         app:layout_constraintTop_toTopOf="@+id/editText3"
         app:srcCompat="@drawable/intercambio" />
 
+    <ImageView
+        android:id="@+id/notAbleToClick"
+        android:layout_width="42dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText3"
+        app:srcCompat="@drawable/intercambio" />
+
 
 </android.support.constraint.ConstraintLayout>

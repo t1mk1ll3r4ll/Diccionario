@@ -42,6 +42,7 @@ public class InicioSesion extends AppCompatActivity {
         barra=findViewById(R.id.progressBar3);
         barra.setVisibility(View.INVISIBLE);
         hidepass =findViewById(R.id.HidePassIS);
+        hidepass.setVisibility(View.INVISIBLE);
         viewpass=findViewById(R.id.ViewPassIS);
         Listener= new FirebaseAuth.AuthStateListener() {
             @Override

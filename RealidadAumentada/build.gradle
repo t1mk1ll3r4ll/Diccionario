@@ -25,12 +25,12 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     buildToolsVersion '28.0.3'
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 27
+        targetSdkVersion 28
         //applicationId 'com.Etnolengua.RealidadAumentada'
         ndk {
             abiFilters 'armeabi-v7a', 'x86'
