@@ -16,5 +16,15 @@ public class ListViewUV extends AppCompatActivity {
         lst = findViewById(R.id.listviewUV);
         final CustomListview CustomLV = new CustomListview(this, espUV, mixeUV);
         lst.setAdapter(CustomLV);
+        lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                text=findViewById(R.id.textView2);
+                ClipboardManager cm = (ClipboardManager)getApplicationContext().getSystemService(getApplicationContext().CLIPBOARD_SERVICE);
+                ClipData CD = ClipData.newPlainText("SOURCE TEXT",espUV[position]);
+                cm.setPrimaryClip(CD);
+                Toast.makeText(getApplicationContext(),"se ha copiado "+espUV[position]+" correctamente",Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

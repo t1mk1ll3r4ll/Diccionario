@@ -15,5 +15,15 @@ public class ListViewOP extends AppCompatActivity {
         lst = findViewById(R.id.listviewOP);
         final CustomListview CustomLV = new CustomListview(this, espOP, mixeOP);
         lst.setAdapter(CustomLV);
+        lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                text=findViewById(R.id.textView2);
+                ClipboardManager cm = (ClipboardManager)getApplicationContext().getSystemService(getApplicationContext().CLIPBOARD_SERVICE);
+                ClipData CD = ClipData.newPlainText("SOURCE TEXT",espOP[position]);
+                cm.setPrimaryClip(CD);
+                Toast.makeText(getApplicationContext(),"se ha copiado "+espOP[position]+" correctamente",Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
