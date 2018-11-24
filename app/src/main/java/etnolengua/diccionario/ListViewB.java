@@ -1,8 +1,13 @@
 package etnolengua.diccionario;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class ListViewB extends AppCompatActivity {
     ListView lst;
@@ -18,8 +23,8 @@ public class ListViewB extends AppCompatActivity {
         lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                text=findViewById(R.id.textView2);
-                ClipboardManager cm = (ClipboardManager)getApplicationContext().getSystemService(getApplicationContext().CLIPBOARD_SERVICE);
+                ClipboardManager cm;
+                cm = (ClipboardManager)getApplicationContext().getSystemService(getApplicationContext().CLIPBOARD_SERVICE);
                 ClipData CD = ClipData.newPlainText("SOURCE TEXT",espB[position]);
                 cm.setPrimaryClip(CD);
                 Toast.makeText(getApplicationContext(),"se ha copiado "+espB[position]+" correctamente",Toast.LENGTH_LONG).show();

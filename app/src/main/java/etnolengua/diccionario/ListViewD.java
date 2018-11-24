@@ -1,8 +1,13 @@
 package etnolengua.diccionario;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class ListViewD extends AppCompatActivity {
     ListView lst;
@@ -19,7 +24,6 @@ public class ListViewD extends AppCompatActivity {
         lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                text=findViewById(R.id.textView2);
                 ClipboardManager cm = (ClipboardManager)getApplicationContext().getSystemService(getApplicationContext().CLIPBOARD_SERVICE);
                 ClipData CD = ClipData.newPlainText("SOURCE TEXT",espD[position]);
                 cm.setPrimaryClip(CD);
