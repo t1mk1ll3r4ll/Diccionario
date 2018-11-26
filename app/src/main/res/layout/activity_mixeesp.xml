@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    tools:context=".Traductor"
+    tools:layout_editor_absoluteY="25dp">
+
+    <TextView
+        android:id="@+id/mixetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-thin"
+        android:text="Mixe"
+        android:textAlignment="center"
+        android:textColor="#2D2D2D"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/MixeIn"
+        app:layout_constraintStart_toStartOf="@+id/MixeIn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/MixeIn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="palabra"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:textColor="#2D2D2D"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/resultado"
+        app:layout_constraintEnd_toStartOf="@+id/Clickable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/resultado"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="Palabra en mixe"
+        app:met_floatingLabelTextColor="#3cb296"
+        app:met_floatingLabelTextSize="@dimen/_13sdp"
+        app:met_primaryColor="#3cb296" />
+
+    <TextView
+        android:id="@+id/EspText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-thin"
+        android:text="Español"
+        android:textAlignment="center"
+        android:textColor="#2d2d2d"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/resultado"
+        app:layout_constraintStart_toStartOf="@+id/resultado"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="42dp"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="#2D2D2D"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/traducir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/Clickable"
+        app:layout_constraintTop_toTopOf="@+id/EspText" />
+
+    <Button
+        android:id="@+id/traducir"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="74dp"
+        android:background="@drawable/btnround"
+        android:fontFamily="sans-serif-thin"
+        android:text="Traducir"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintBottom_toTopOf="@+id/pronuntext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <VideoView
+        android:id="@+id/pronunvid"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pronuntext" />
+
+    <TextView
+        android:id="@+id/pronuntext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="274dp"
+        android:fontFamily="sans-serif-thin"
+        android:text="Pronunciación"
+        android:textColor="#2d2d2d"
+        android:textSize="@dimen/_24sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Clickable"
+        android:layout_width="42dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/MixeIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/MixeIn"
+        app:srcCompat="@drawable/intercambio" />
+
+    <ImageView
+        android:id="@+id/unclickable"
+        android:layout_width="42dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/MixeIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/MixeIn"
+        app:srcCompat="@drawable/intercambio" />
+
+    <Button
+        android:id="@+id/buttonEspMix"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btnround"
+        android:fontFamily="sans-serif-thin"
+        android:onClick="reversemixe"
+        android:text="Español-Mixe"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/pronuntext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/traducir" />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -2,6 +2,7 @@ package etnolengua.diccionario;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity{
                 ClipData CD = ClipData.newPlainText("SOURCE TEXT",espA[position]);
                 cm.setPrimaryClip(CD);
                 Toast.makeText(getApplicationContext(),"se ha copiado "+espA[position]+" correctamente",Toast.LENGTH_LONG).show();
+                Intent inteent= new Intent(getApplicationContext(),Traductor.class);
+                startActivity(inteent);
             }
         });
 

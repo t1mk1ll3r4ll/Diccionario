@@ -1,6 +1,9 @@
 package etnolengua.diccionario;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -18,6 +21,8 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
+
+import static android.content.ClipDescription.MIMETYPE_TEXT_PLAIN;
 
 
 public class Traductor extends AppCompatActivity {
@@ -57,13 +62,21 @@ public class Traductor extends AppCompatActivity {
                 }
         });
 
-            traducir.setOnClickListener(new View.OnClickListener() {
+        traducir.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                        recorre();
-                        Video();
+                    recorre();
+                    Video();
                 }
             });
+        String data;
+
+        ClipboardManager cm = (ClipboardManager)getApplicationContext().getSystemService(getApplicationContext().CLIPBOARD_SERVICE);
+        if(cm.hasPrimaryClip()){
+            ClipData.Item item = cm.getPrimaryClip().getItemAt(0);
+            data=item.getText().toString();
+            ETtrad.setText(data);
+        }
     }
     public void recorre(){
         traducir.setVisibility(View.INVISIBLE);
@@ -129,6 +142,11 @@ public class Traductor extends AppCompatActivity {
                 imagen.setVisibility(View.VISIBLE);
                 notClickable.setVisibility(View.INVISIBLE);
             }
+    }
+    public void reverese(View view){
+        Intent intent = new Intent(getApplicationContext(),mixeesp.class);
+        startActivity(intent);
+        finish();
     }
 
     public void Video(){
