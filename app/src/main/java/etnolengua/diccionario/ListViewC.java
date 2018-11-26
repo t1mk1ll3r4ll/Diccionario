@@ -33,6 +33,18 @@ public class ListViewC extends AppCompatActivity {
                 startActivity(inteent);
             }
         });
+        lst.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                ClipboardManager cm = (ClipboardManager)getApplicationContext().getSystemService(getApplicationContext().CLIPBOARD_SERVICE);
+                ClipData CD = ClipData.newPlainText("SOURCE TEXT",mixeC[position]);
+                cm.setPrimaryClip(CD);
+                Toast.makeText(getApplicationContext(),"se ha copiado "+mixeC[position]+" correctamente",Toast.LENGTH_LONG).show();
+                Intent intent= new Intent(getApplicationContext(),mixeesp.class);
+                startActivity(intent);
+                return false;
+            }
+        });
     }
 }
 

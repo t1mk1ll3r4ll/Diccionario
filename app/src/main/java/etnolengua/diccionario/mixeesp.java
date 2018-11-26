@@ -1,5 +1,7 @@
 package etnolengua.diccionario;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,6 +45,13 @@ public class mixeesp extends AppCompatActivity {
                 recorrer();
             }
         });
+        String data;
+        ClipboardManager cm = (ClipboardManager)getApplicationContext().getSystemService(getApplicationContext().CLIPBOARD_SERVICE);
+        if(cm.hasPrimaryClip()){
+            ClipData.Item item = cm.getPrimaryClip().getItemAt(0);
+            data=item.getText().toString();
+            mixeIn.setText(data);
+        }
     }
     private void recorrer() {
 
