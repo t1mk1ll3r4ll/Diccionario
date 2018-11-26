@@ -8,7 +8,7 @@
 
     <uses-sdk
         android:minSdkVersion="16"
-        android:targetSdkVersion="28" />
+        android:targetSdkVersion="27" />
 
     <supports-screens
         android:anyDensity="true"
@@ -61,7 +61,7 @@
 
         <meta-data
             android:name="unity.build-id"
-            android:value="77270160-d4d1-4576-b78c-f68d7b0d2b5b" />
+            android:value="d454bc37-364f-4133-8307-17e56e9c785b" />
         <meta-data
             android:name="unity.splash-mode"
             android:value="0" />
