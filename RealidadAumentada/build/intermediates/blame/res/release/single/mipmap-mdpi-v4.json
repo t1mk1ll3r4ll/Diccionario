@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\aador\\AndroidStudioProjects\\Diccionario\\RealidadAumentada\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi-v4\\app_icon.png",
+        "source": "C:\\Users\\aador\\AndroidStudioProjects\\Diccionario\\RealidadAumentada\\src\\main\\res\\mipmap-mdpi\\app_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\aador\\AndroidStudioProjects\\Diccionario\\RealidadAumentada\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi-v4\\ic_launcher_foreground.png",
+        "source": "C:\\Users\\aador\\AndroidStudioProjects\\Diccionario\\RealidadAumentada\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\aador\\AndroidStudioProjects\\Diccionario\\RealidadAumentada\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi-v4\\ic_launcher_background.png",
+        "source": "C:\\Users\\aador\\AndroidStudioProjects\\Diccionario\\RealidadAumentada\\src\\main\\res\\mipmap-mdpi\\ic_launcher_background.png"
+    }
+]
