@@ -14,7 +14,7 @@ import android.widget.VideoView;
 
 public class mixeesp extends AppCompatActivity {
     EditText mixeIn;
-    Button traducir;
+    Button traducir, RA;
     VideoView video_oculto;
     TextView texto_oculto, respuesta;
     ImageView Click, NoClick;
@@ -38,8 +38,24 @@ public class mixeesp extends AppCompatActivity {
         respuesta=findViewById(R.id.resultado);
         Click=findViewById(R.id.Clickable);
         NoClick=findViewById(R.id.unclickable);
+        RA=findViewById(R.id.ButRAMixe);
+
+        RA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Realidad = new Intent (getApplicationContext(),RedirectUnity.class);
+                startActivity(Realidad);
+            }
+        });
 
         traducir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recorrer();
+            }
+        });
+
+        Click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 recorrer();

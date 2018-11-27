@@ -37,6 +37,7 @@ public class Traductor extends AppCompatActivity {
 
     int index=0;
     int puchado=0;
+    Button RA;
     ImageView imagen,notClickable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +51,18 @@ public class Traductor extends AppCompatActivity {
         Vid = findViewById(R.id.videoView3);
         imagen = findViewById(R.id.imageView3);
         notClickable=findViewById(R.id.notAbleToClick);
-
+        RA=findViewById(R.id.ButRAEsp);
         Vid.setVisibility(View.INVISIBLE);
         pronun.setVisibility(View.INVISIBLE);
         notClickable.setVisibility(View.INVISIBLE);
 
+        RA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent realidad = new Intent (getApplicationContext(), RedirectUnity.class);
+                startActivity(realidad);
+            }
+        });
         imagen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                     recorre();
