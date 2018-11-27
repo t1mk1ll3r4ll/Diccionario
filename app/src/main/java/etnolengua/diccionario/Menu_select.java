@@ -25,11 +25,12 @@ public class Menu_select extends AppCompatActivity {
         btnTrad=findViewById(R.id.ButTrad);
         opciones=findViewById(R.id.Boton_Opciones);
 
+
         btnRA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                Toast.makeText(getApplicationContext(),"No presione el botón de regreso hasta que la aplicación cargue completamente",Toast.LENGTH_LONG).show();
-               Intent intent = new Intent(Menu_select.this, UnityPlayerActivity.class);
+               Intent intent = new Intent(Menu_select.this, RedirectUnity.class);
                startActivity(intent);
             }
         });
@@ -56,6 +57,7 @@ public class Menu_select extends AppCompatActivity {
             }
         });
     }
+
     public void onBackPressed() {
         if(TIME_LIMIT+backPressed>System.currentTimeMillis()){
             super.onBackPressed();

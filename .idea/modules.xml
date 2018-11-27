@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Diccionario.iml" filepath="$PROJECT_DIR$/Diccionario.iml" />
       <module fileurl="file://$PROJECT_DIR$/RealidadAumentada/RealidadAumentada.iml" filepath="$PROJECT_DIR$/RealidadAumentada/RealidadAumentada.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RealidadAumentada/RealidadAumentada.iml" filepath="$PROJECT_DIR$/RealidadAumentada/RealidadAumentada.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

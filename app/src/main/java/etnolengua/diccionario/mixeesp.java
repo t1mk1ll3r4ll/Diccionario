@@ -57,11 +57,18 @@ public class mixeesp extends AppCompatActivity {
 
         String tring = mixeIn.getText().toString().toLowerCase();
 
+        for (int i = 0; i < mixe.length; i++) {
+            if (tring.equals(mixe[i])) {
+                index = i;
+                band = true;
+                break;
+            }
+        }
         if (tring.isEmpty()) {
             mixeIn.setError("por favor, ingrese una palabra");
-            respuesta.setText("");
-            band = true;
-        } else if (!band) {
+            respuesta.setText(" ");
+            band = false;
+        } else if (band) {
             for (int i = 0; i < mixe.length; i++) {
                 if (tring.equals(mixe[i])) {
                     index = i;
