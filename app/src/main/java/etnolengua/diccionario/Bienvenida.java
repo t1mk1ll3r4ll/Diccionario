@@ -19,6 +19,8 @@ public class Bienvenida extends AppCompatActivity {
         btniniciar=findViewById(R.id.iniciabut);
         btnregistrar=findViewById(R.id.RegistroBut);
 
+
+
         btniniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,6 +42,11 @@ public class Bienvenida extends AppCompatActivity {
     public void onBackPressed() {
         if(TIME_LIMIT+backPressed>System.currentTimeMillis()){
             super.onBackPressed();
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
         }
         else{
             Toast.makeText(getApplicationContext(),"Presiona de nuevo para salir",Toast.LENGTH_LONG).show();

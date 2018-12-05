@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,6 +25,7 @@ public class cambioContra extends AppCompatActivity {
     EditText oldpass,newpass,newpassC;
     FirebaseAuth mAuth;
     ImageView oldVer,oldOcul, newVer, newOcul, newCVer, newCOcul;
+    ProgressBar barraProgreso;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,8 @@ public class cambioContra extends AppCompatActivity {
         newpassC=findViewById(R.id.camcon2);
         cambiarContrasena=findViewById(R.id.butcamcon);
         mAuth=FirebaseAuth.getInstance();
+        barraProgreso=findViewById(R.id.progressBar4);
+        barraProgreso.setVisibility(View.INVISIBLE);
 
         oldVer= findViewById(R.id.AntiguaMostrar);
         oldOcul=findViewById(R.id.AntiguaOcultar);
@@ -126,50 +130,69 @@ public class cambioContra extends AppCompatActivity {
     }
     
     public void cambio(){
-        String antigua=oldpass.getText().toString();
+        hacervisible();
+        final String antigua=oldpass.getText().toString();
         final String nueva=newpass.getText().toString();
         final String nuevaC= newpassC.getText().toString();
         final String Email=mAuth.getCurrentUser().getEmail();
 
-        if(!nueva.isEmpty()&& nuevaC.isEmpty()){
-            newpassC.setError("Ingrese de nuevo su contraseña");
+        if(nuevaC.isEmpty()){
+            newpassC.setError("Ingrese de nuevo su nueva contraseña");
+        }else if(nueva.isEmpty()){
+            newpass.setError("Ingrese su nueva contraseña");
         }else if(!nueva.equals(nuevaC)){
             newpass.setError("las contraseñas no son iguales");
             newpassC.setError("las contraseñas no son iguales");
         }
 
-        if(nueva.equals(nuevaC) && !nueva.isEmpty()) {
+        if(nueva.equals(nuevaC) && !nueva.isEmpty() || !nuevaC.isEmpty()) {
             try {
                 mAuth.signInWithEmailAndPassword(Email, antigua).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        mAuth.getCurrentUser().updatePassword(nueva).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(), "La contraseña se ha cambiado correctamente", Toast.LENGTH_LONG).show();
-                                    mAuth.signOut();
-                                    Intent intent = new Intent(cambioContra.this, Bienvenida.class);
-                                    startActivity(intent);
-                                    finish();
-                                } else {
-                                    oldpass.setError("La contraseña no es correcta, intenta de nuevo");
+                        if (task.isSuccessful()){
+                            mAuth.getCurrentUser().updatePassword(nueva).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(getApplicationContext(), "La contraseña se ha cambiado correctamente", Toast.LENGTH_LONG).show();
+                                        mAuth.signOut();
+                                        Intent intent = new Intent(cambioContra.this, Bienvenida.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        startActivity(intent);
+                                        finish();
+                                    } else {
+                                        oldpass.setError("La contraseña no es correcta, intenta de nuevo");
+                                        hacerInvisible();
+                                    }
                                 }
-                            }
-                        });
+                            });
+                        }else{
+                            oldpass.setError("La contraseña es incorrecta");
+                            hacerInvisible();
+                        }
                     }
                 });
-
             }catch(NullPointerException e) {
                 Toast.makeText(getApplicationContext(),"oh oh... A ocurrido un error. lo sentimos",Toast.LENGTH_LONG).show();
+                hacerInvisible();
             }
         }
     }
+   public void hacervisible(){
+        cambiarContrasena.setVisibility(View.INVISIBLE);
+        barraProgreso.setVisibility(View.VISIBLE);
+   }
+   public void hacerInvisible(){
+        cambiarContrasena.setVisibility(View.VISIBLE);
+        barraProgreso.setVisibility(View.INVISIBLE);
+   }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(getApplicationContext(),UserOptions.class);
+        Intent intent = new Intent (getApplicationContext(), Menu_select.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();
     }

@@ -213,4 +213,16 @@
         app:layout_constraintStart_toEndOf="@+id/camcon2"
         app:layout_constraintTop_toTopOf="@+id/camcon2"
         app:srcCompat="@drawable/visibleoff" />
+
+    <ProgressBar
+        android:id="@+id/progressBar4"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/butcamcon"
+        app:layout_constraintEnd_toEndOf="@+id/butcamcon"
+        app:layout_constraintStart_toStartOf="@+id/butcamcon"
+        app:layout_constraintTop_toTopOf="@+id/butcamcon" />
 </android.support.constraint.ConstraintLayout>
