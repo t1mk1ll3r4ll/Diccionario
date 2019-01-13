@@ -1,5 +1,7 @@
 package etnolengua.diccionario;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,9 +19,14 @@ public class Menu_select extends AppCompatActivity {
     private static final int TIME_LIMIT = 1500;
     private static long backPressed;
     @Override
+
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_select);
+
+        borrarPortapapeles();
         btnRA=findViewById(R.id.ButRA);
         btnDic=findViewById(R.id.ButDic);
         btnTrad=findViewById(R.id.ButTrad);
@@ -69,5 +76,16 @@ public class Menu_select extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Presiona de nuevo para salir",Toast.LENGTH_LONG).show();
         }
         backPressed=System.currentTimeMillis();
+    }
+
+    public void borrarPortapapeles(){
+        try{
+            ClipboardManager cm = (ClipboardManager)getApplicationContext().getSystemService(getApplicationContext().CLIPBOARD_SERVICE);
+            ClipData CD = ClipData.newPlainText("SOURCE TEXT","");
+            cm.setPrimaryClip(CD);
+        }catch(NullPointerException e){
+            Toast.makeText(getApplicationContext(),"no se ha podido borrar correctaente el portapapeles \n\t lo sentimos",Toast.LENGTH_LONG).show();
+        }
+
     }
 }
