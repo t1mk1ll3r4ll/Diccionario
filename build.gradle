@@ -18,6 +18,7 @@ allprojects {
     repositories {
         flatDir{
             dirs 'C:\\Users\\aador\\AndroidStudioProjects\\Diccionario\\RealidadAumentada\\libs'
+            dirs 'C:\\Users\\T1MK1LL3R4LL\\Documents\\Diccionario Android Studio\\RealidadAumentada\\libs'
         }
         google()
         jcenter()

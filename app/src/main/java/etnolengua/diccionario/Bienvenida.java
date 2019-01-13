@@ -9,6 +9,10 @@ import android.widget.Toast;
 
 public class Bienvenida extends AppCompatActivity {
 
+
+
+    
+
     Button btnregistrar, btniniciar;
     private static final int TIME_LIMIT = 1500;
     private static long backPressed;
