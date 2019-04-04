@@ -8,11 +8,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class Bienvenida extends AppCompatActivity {
-
-
-
-    
-
     Button btnregistrar, btniniciar;
     private static final int TIME_LIMIT = 1500;
     private static long backPressed;
@@ -22,9 +17,6 @@ public class Bienvenida extends AppCompatActivity {
         setContentView(R.layout.activity_bienvenida);
         btniniciar=findViewById(R.id.iniciabut);
         btnregistrar=findViewById(R.id.RegistroBut);
-
-
-
         btniniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,7 +25,6 @@ public class Bienvenida extends AppCompatActivity {
                 finish();
             }
         });
-
         btnregistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

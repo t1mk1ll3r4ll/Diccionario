@@ -1,5 +1,4 @@
 package etnolengua.diccionario;
-
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
@@ -10,22 +9,15 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.Etnolengua.RealidadAumentada.UnityPlayerActivity;
-
-
-
 public class Menu_select extends AppCompatActivity {
 
     Button btnRA, btnDic, btnTrad, opciones;
     private static final int TIME_LIMIT = 1500;
     private static long backPressed;
     @Override
-
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_select);
-
         borrarPortapapeles();
         btnRA=findViewById(R.id.ButRA);
         btnDic=findViewById(R.id.ButDic);
@@ -41,6 +33,7 @@ public class Menu_select extends AppCompatActivity {
                startActivity(intent);
             }
         });
+
         btnDic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,6 +41,7 @@ public class Menu_select extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
+
         btnTrad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,6 +49,7 @@ public class Menu_select extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         opciones.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
