@@ -7,7 +7,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.4.1'
     }
 }
 
@@ -27,18 +27,19 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     buildToolsVersion '28.0.3'
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 27
+        targetSdkVersion 28
     //    applicationId 'com.Etnolengua.RealidadAumentada'
         ndk {
             abiFilters 'armeabi-v7a', 'x86'
         }
         versionCode 1
         versionName '0.1'
+        maxSdkVersion 28
     }
 
     lintOptions {

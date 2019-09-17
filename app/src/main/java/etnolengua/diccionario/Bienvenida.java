@@ -1,3 +1,4 @@
+//Inicio de las 10 primeras paginas
 package etnolengua.diccionario;
 
 import android.content.Intent;

@@ -1,3 +1,5 @@
+//Java carga de diccionarios
+
 package etnolengua.diccionario;
 
 import android.app.Activity;

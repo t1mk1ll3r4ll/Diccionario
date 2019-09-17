@@ -141,6 +141,12 @@ INJECTED from C:\Users\T1MK1LL3R4LL\Documents\GitHub\Diccionario\RealidadAumenta
 INJECTED from C:\Users\T1MK1LL3R4LL\Documents\GitHub\Diccionario\RealidadAumentada\src\main\AndroidManifest.xml
 INJECTED from C:\Users\T1MK1LL3R4LL\Documents\GitHub\Diccionario\RealidadAumentada\src\main\AndroidManifest.xml
 INJECTED from C:\Users\T1MK1LL3R4LL\Documents\GitHub\Diccionario\RealidadAumentada\src\main\AndroidManifest.xml
+INJECTED from C:\Users\T1MK1LL3R4LL\Documents\GitHub\Diccionario\RealidadAumentada\src\main\AndroidManifest.xml
+INJECTED from C:\Users\T1MK1LL3R4LL\Documents\GitHub\Diccionario\RealidadAumentada\src\main\AndroidManifest.xml
+	android:maxSdkVersion
+		INJECTED from C:\Users\T1MK1LL3R4LL\Documents\GitHub\Diccionario\RealidadAumentada\src\main\AndroidManifest.xml
+		ADDED from C:\Users\T1MK1LL3R4LL\Documents\GitHub\Diccionario\RealidadAumentada\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\T1MK1LL3R4LL\Documents\GitHub\Diccionario\RealidadAumentada\src\main\AndroidManifest.xml
 	android:targetSdkVersion
 		INJECTED from C:\Users\T1MK1LL3R4LL\Documents\GitHub\Diccionario\RealidadAumentada\src\main\AndroidManifest.xml
 		ADDED from C:\Users\T1MK1LL3R4LL\Documents\GitHub\Diccionario\RealidadAumentada\src\main\AndroidManifest.xml

@@ -46,6 +46,9 @@ public class Menu_select extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent (Menu_select.this,Traductor.class);
+                ClipboardManager cm = (ClipboardManager)getApplicationContext().getSystemService(getApplicationContext().CLIPBOARD_SERVICE);
+                ClipData CD = ClipData.newPlainText("SOURCE TEXT", " ");
+                cm.setPrimaryClip(CD);
                 startActivity(intent);
             }
         });

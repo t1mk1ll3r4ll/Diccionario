@@ -1,35 +1,58 @@
+//noinspection GradleCompatible
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-
+    signingConfigs {
+        config {
+            keyAlias 'Key1'
+            keyPassword 'Albertini2409'
+            storeFile file('C:\\Users\\T1MK1LL3R4LL\\Documents\\GitHub\\Diccionario\\KeystoreFolder\\key1.jks')
+            storePassword 'Albertini2409'
+        }
+        lintOptions {
+            checkReleaseBuilds false
+            // Or, if you prefer, you can continue to check for errors in release builds,
+            // but continue the build even when errors are found:
+            abortOnError false
+        }
+    }
+    compileSdkVersion 28
     defaultConfig {
         applicationId "etnolengua.diccionario"
         minSdkVersion 16
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName '7.1.0'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+        signingConfig signingConfigs.config
+        maxSdkVersion 28
     }
     buildTypes {
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
     productFlavors {
     }
+    compileOptions {
+        sourceCompatibility = '1.6'
+        targetCompatibility = '1.8'
+    }
+    buildToolsVersion = '28.0.3'
 }
 
 dependencies {
     implementation project(':RealidadAumentada')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.intuit.sdp:sdp-android:1.0.5'
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:design:28.0.0'
     implementation 'com.google.firebase:firebase-auth:11.6.0'
     implementation 'com.google.firebase:firebase-core:11.6.0'
     testImplementation 'junit:junit:4.12'
@@ -40,3 +63,4 @@ dependencies {
 }
 
 apply plugin: 'com.google.gms.google-services'
+
